@@ -10,3 +10,6 @@ with open("words.txt") as f:
     for item in words_letters:
         letters_word_dict[item[1]].add(item[0])
 
+    s = input("Enter string: ")
+    s_letters = frozenset(Counter(re.sub(r"[^a-zA-Z0-9]", "", s.lower())).items())
+    print(letters_word_dict[s_letters])
