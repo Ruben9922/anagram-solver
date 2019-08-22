@@ -10,4 +10,3 @@ with open("words.txt") as f:
     for item in words_letters:
         letters_word_dict[item[1]].add(item[0])
 
-    print(letters_word_dict)
