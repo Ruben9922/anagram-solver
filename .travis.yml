@@ -1,0 +1,5 @@
+language: python
+
+# Run tests
+script:
+  - echo "skipping tests"
