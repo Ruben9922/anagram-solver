@@ -1,6 +1,11 @@
 from collections import Counter, defaultdict
 import re
 
+
+def compute_letter_counts(s):
+    return frozenset(Counter(re.sub(r"[^a-zA-Z0-9]", "", s.lower())).items())
+
+
 with open("words.txt") as f:
     # Read list of English words from text file and split into a list
     # IIRC words.txt is from: https://github.com/dwyl/english-words
@@ -13,7 +18,7 @@ with open("words.txt") as f:
     # Another alternative would be to sort the letters in each word
     # Create a list which contains each word along with this order-insensitive representation
     # TODO: Put counter stuff into its own function
-    words_letters = [(word, frozenset(Counter(re.sub(r"[^a-zA-Z0-9]", "", word.lower())).items())) for word in words]
+    words_letters = [(word, compute_letter_counts(word)) for word in words]
 
     # Create a dictionary whose keys are the order-insensitive representation described above and whose values are the
     # set of words which correspond to that representation - e.g. key = {"a": 1, "b": 1, "t": 1}, value = {"bat", "tab"}
@@ -23,11 +28,11 @@ with open("words.txt") as f:
         letters_word_dict[item[1]].add(item[0])
 
     # Input a string from the user
-    s = input("Enter string: ")
+    anagram = input("Enter string: ")
 
     # Convert this string to the order-insensitive representation and use this to lookup corresponding words in the
     # dictionary created above
-    s_letters = frozenset(Counter(re.sub(r"[^a-zA-Z0-9]", "", s.lower())).items())
+    anagram_letters = compute_letter_counts(anagram)
 
     # Output the corresponding words
-    print(letters_word_dict[s_letters])
+    print(letters_word_dict[anagram_letters])
