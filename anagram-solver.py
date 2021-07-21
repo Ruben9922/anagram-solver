@@ -35,4 +35,4 @@ with open("words.txt") as f:
     anagram_letters = compute_letter_counts(anagram)
 
     # Output the corresponding words
-    print(letters_word_dict[anagram_letters])
+    print(sorted(letters_word_dict[anagram_letters]))
