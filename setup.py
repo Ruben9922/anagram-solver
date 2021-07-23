@@ -24,7 +24,7 @@ setuptools.setup(
     ],
     python_requires='>=3.6',
     entry_points={
-        'console_scripts': ['ruben-anagram-solver=anagram-solver:main'],
+        'console_scripts': ['ruben-anagram-solver=anagram_solver:main'],
     },
-    py_modules=['anagram-solver'],
+    py_modules=['anagram_solver'],
 )
