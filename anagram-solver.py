@@ -17,7 +17,6 @@ with open("words.txt") as f:
     # This representation is a Counter which stores the number of occurrences of each letter in the word
     # Another alternative would be to sort the letters in each word
     # Create a list which contains each word along with this order-insensitive representation
-    # TODO: Put counter stuff into its own function
     words_letters = [(word, compute_letter_counts(word)) for word in words]
 
     # Create a dictionary whose keys are the order-insensitive representation described above and whose values are the
