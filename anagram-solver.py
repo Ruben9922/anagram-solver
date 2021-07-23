@@ -20,8 +20,10 @@ with open("words.txt") as f:
     words_letters = [(word, compute_letter_counts(word)) for word in words]
 
     # Create a dictionary whose keys are the order-insensitive representation described above and whose values are the
-    # set of words which correspond to that representation - e.g. key = {"a": 1, "b": 1, "t": 1}, value = {"bat", "tab"}
+    # set of words that correspond to that representation - e.g. key = {"a": 1, "b": 1, "t": 1}, value = {"bat", "tab"}
     # Using defaultdict so no need to handle the case where the key doesn't exist
+    # Dictionary is a good idea if the program was extended to allow looking up more than one word, so that lookups are
+    # more efficient
     letters_word_dict = defaultdict(set)
     for item in words_letters:
         letters_word_dict[item[1]].add(item[0])
