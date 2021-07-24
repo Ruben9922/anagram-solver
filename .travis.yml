@@ -3,10 +3,8 @@ script:
 - echo "skipping tests"
 deploy:
   provider: pypi
-  user: __token__
-  password:
-    secure: ac/V+4YT5mWsT3JRdDy1skgywihEgecaifVEidOc/8iVKZ9AtxvjAZaODOtYCojs20GLAu/C3/eeWDZtvAPfIltLBXXEYiUMwI7Tq7ofGPqI9Veetpv3prGuOQabIr6PDLk9bzKOxTWEQaJyjGT45MPQ5M6VfDSPCN89Ij/exP/uq1o58yfqEhpmGbl3HqL0wjQ3GMHfPfnf90+gV03xtB5o8rgl0KkHv9lyxR7DBBFdPzK4T3uR25YfWp8251kA451mZV0bW68jRgzQZrp4aHEoj3VlB3Qm1Vh12CD+Ol9LZwqLIE6UfRy+Q7is60jdOCt8hGsijYXXDuCiyNzfI/IddYHr39hwUyKj2j9M3BbqEk5yDMkFwYHiIYOz0cPJV1Hl6n7B2Bu/L9QnVby9KOjyIv3e3HDoVr1hYaIytRUM7rjx5uyopDRfLRq16k3XsL/PO//LKHAfbaGnP7SW8GszJaugYxdNu1RVUfHSJ6DqxSBIlACN8vAYM5G5C6uBPHPH4EmVG7wEz+dk+obWN5pgW1Gkb6XqDgvNI+HE7L2QCnb+ziDAmwTMAf8PQRDoEFa7iz57kXE1DQmULVkwO+Ue8qQryIqGu4WUrtCPuzON6tipM0XWjb8QhvSr6/zTistPbDRFtHUz+gZsSQMNZAhG7PinWTIYhBRaQRtPI0M=
+  username: __token__
   on:
     tags: true
-  distributions: sdist bdist_wheel
   skip_existing: true
+  edge: true
